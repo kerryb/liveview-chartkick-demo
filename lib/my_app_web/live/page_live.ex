@@ -4,9 +4,11 @@ defmodule MyAppWeb.PageLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <%= "{foo: 1, bar: 4, baz: 2, qux: 3}"
-    |> Chartkick.bar_chart()
-    |> Phoenix.HTML.raw() %>
+    <div id="chart" phx-update="ignore">
+      <%= "{foo: 1, bar: 4, baz: 2, qux: 3}"
+      |> Chartkick.bar_chart()
+      |> Phoenix.HTML.raw() %>
+    </div>
     """
   end
 end

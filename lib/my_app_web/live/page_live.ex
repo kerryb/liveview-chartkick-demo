@@ -12,7 +12,7 @@ defmodule MyAppWeb.PageLive do
     <input type="button" phx-click="hide" value="Hide" disabled={not @show} />
     <input type="button" phx-click="show" value="Show" disabled={@show} />
     <%= if @show do %>
-      <div id="chart" phx-update="ignore">
+      <div id="chart" phx-update="ignore" phx-hook="RenderChart">
         <%= "{foo: 1, bar: 4, baz: 2, qux: 3}"
         |> Chartkick.bar_chart()
         |> Phoenix.HTML.raw() %>
